@@ -1,0 +1,99 @@
+---
+title: "New file"
+description: "Description of your new file."
+---
+
+## 📌 Overview
+
+The **Lumos Color System** is designed to provide **scalability, consistency, and accessibility** across all platforms. This system ensures a structured approach to color application, seamless adaptability for dark and light themes, and enhanced UI coherence.
+
+---
+
+## 🏷️ 1. Naming Convention
+
+The Lumos Design System follows a structured **naming convention** to maintain consistency across all tokens:
+
+**Format:**
+
+```
+system . tier . type . group . purpose/modifier
+```
+
+### 🔹 Naming Example:
+
+```
+lumos.alias.color.primary.onHover
+lumos.component.button.padding.large
+```
+
+✅ **System** → Defines the design system (e.g., lumos)✅ **Tier** → Indicates whether it is a global, alias, or component token✅ **Type** → Specifies the token type (e.g., color, spacing, typography)✅ **Group** → Identifies the category (e.g., primary, button)✅ **Purpose/Modifier** → Defines its specific role (e.g., onHover, large)
+
+### **Why Use This Naming Convention?**
+
+Using a structured naming convention ensures:
+
+✅ **Clarity & Readability** – Tokens are easy to understand, reducing confusion for designers and developers.✅ **Scalability** – The system can grow without breaking existing structures.✅ **Reusability** – Standardized tokens allow for design consistency across multiple platforms.✅ **Efficiency** – Speeds up collaboration by providing clear guidelines on token usage.✅ **Flexibility** – Enables quick updates to themes, dark mode support, and brand evolution.
+
+This naming structure enables a **systematic, future-proof approach** to managing colors, typography, spacing, and other UI elements.
+
+---
+
+## 2️⃣ Example Use Case: Button Component
+
+To illustrate how **Global, Alias, and Component-Specific Tokens** work together, let’s use a **Button Component** as an example.
+
+### **Step 1: Define the Global Tokens**
+
+Global tokens establish the base color values.
+
+```
+lumos.global.color.primary.500 → #3B82F6 (Blue)
+lumos.global.color.neutral.50 → #FFFFFF (White)
+lumos.global.color.neutral.900 → #000000 (Black)
+```
+
+### **Step 2: Define the Alias Tokens**
+
+Alias tokens map the global tokens to meaningful roles.
+
+```
+lumos.alias.color.background.default → {lumos.global.color.neutral.50}
+lumos.alias.color.text.inverted → {lumos.global.color.neutral.50}
+lumos.alias.color.text.primary → {lumos.global.color.neutral.900}
+```
+
+### **Step 3: Apply Component-Specific Tokens**
+
+Component-specific tokens assign alias tokens to the button component.
+
+```
+lumos.component.color.button.background.default → {lumos.alias.color.background.default}
+lumos.component.color.button.text.default → {lumos.alias.color.text.inverted}
+lumos.component.color.button.border.default → {lumos.alias.color.border.default}
+```
+
+### **Why Use This Structure?**
+
+✅ **Consistency** – Ensures all buttons follow the same styling rules.✅ **Scalability** – If we need to change the theme, updating the alias tokens automatically updates all buttons.✅ **Accessibility** – Ensures contrast and readability for users with different needs.
+
+---
+
+## 3️⃣ Light & Dark Mode Mapping
+
+Alias tokens allow for **seamless light and dark mode switching.**
+
+### 🌞 Light Mode
+
+```
+lumos.alias.color.background.default → {lumos.global.color.neutral.50}
+lumos.alias.color.text.default → {lumos.global.color.neutral.900}
+lumos.alias.color.border.default → {lumos.global.color.neutral.300}
+```
+
+### 🌙 Dark Mode
+
+```
+lumos.alias.color.background.default → {lumos.global.color.neutral.900}
+lumos.alias.color.text.default → {lumos.global.color.neutral.50}
+lumos.alias.color.border.default → {lumos.global.color.neutral.700}
+```
